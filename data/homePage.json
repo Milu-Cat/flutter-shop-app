@@ -1,0 +1,64 @@
+{
+  "data": {
+    "slides": [
+      {
+        "image": "image/home_swiper4.jpg"
+      },
+      {
+        "image": "image/home_swiper5.jpg"
+      },
+      {
+        "image": "image/home_swiper6.jpg"
+      }
+    ],
+    "topNavigator": [
+      {
+        "image": "image/top_navigator1.jpg",
+        "topTitle": "超市"
+      },
+      {
+        "image": "image/top_navigator2.jpg",
+        "topTitle": "超市"
+      },
+      {
+        "image": "image/top_navigator3.jpg",
+        "topTitle": "超市"
+      },
+      {
+        "image": "image/top_navigator4.jpg",
+        "topTitle": "超市"
+      },
+      {
+        "image": "image/top_navigator5.jpg",
+        "topTitle": "超市"
+      },
+      {
+        "image": "image/top_navigator6.jpg",
+        "topTitle": "超市"
+      },
+      {
+        "image": "image/top_navigator7.jpg",
+        "topTitle": "超市"
+      },
+      {
+        "image": "image/top_navigator8.jpg",
+        "topTitle": "超市"
+      },
+      {
+        "image": "image/top_navigator9.jpg",
+        "topTitle": "超市"
+      },
+      {
+        "image": "image/top_navigator10.jpg",
+        "topTitle": "超市"
+      }
+    ],
+    "adPicture": {
+      "image": "image/adBanner1.jpg"
+    },
+    "adTell": {
+      "image": "image/adTell.jpg",
+      "leaderPhone": "15510119951"
+    }
+  }
+}
