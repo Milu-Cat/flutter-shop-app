@@ -70,6 +70,14 @@ flutter:
   
   - image/adBanner1.jpg
   - image/adTell.jpg
+
+  - image/recommend1.jpg
+  - image/recommend2.jpg
+  - image/recommend3.jpg
+  - image/recommend4.jpg
+  - image/recommend5.jpg
+  - image/recommend6.jpg
+  - image/recommend7.jpg
   
   #  - images/a_dot_ham.jpeg
 

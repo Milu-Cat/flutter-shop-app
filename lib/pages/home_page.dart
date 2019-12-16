@@ -30,13 +30,17 @@ class _HomePageState extends State<HomePage> {
             String adPicture = data['data']['adPicture']['image'];
             String adTell = data['data']['adTell']['image'];
             String leaderPhone = data['data']['adTell']['leaderPhone'];
-            return Column(
-              children: <Widget>[
-                SwiperDiy(swiperDataList: swiper),
-                TopNavigator(navigatorList: navigatorList),
-                AdBanner(adPicture:adPicture),
-                AdTell(adTell: adTell, leaderPhone: leaderPhone),
-              ],
+            List<Map> recommendList = (data['data']['recommend'] as List).cast();
+            return SingleChildScrollView(
+              child:  Column(
+                children: <Widget>[
+                  SwiperDiy(swiperDataList: swiper),
+                  TopNavigator(navigatorList: navigatorList),
+                  AdBanner(adPicture:adPicture),
+                  AdTell(adTell: adTell, leaderPhone: leaderPhone),
+                  Recommed(recommedList: recommendList,)
+                ],
+              ),
             );
           }else{
             return Center(
@@ -150,7 +154,7 @@ class AdTell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0.0),
+      padding: const EdgeInsets.fromLTRB(10.0, 10.0, 20.0, 10.0),
       height: ScreenUtil().setHeight(240.0),
       width: ScreenUtil().setWidth(1080.0),
       // color: Colors.green,
@@ -162,12 +166,96 @@ class AdTell extends StatelessWidget {
   }
 
   void _launchUrl() async{
-    String url = 'tel' + leaderPhone;
+    String url = 'tel:' + leaderPhone;
     if(await canLaunch(url)){
       await launch(url);
       print('正在打电话');
     }else {
       throw 'url不能进行访问！';
     }
+  }
+}
+
+
+
+// 商品推荐
+class Recommed extends StatelessWidget {
+  
+  final List recommedList;
+  Recommed({this.recommedList});
+
+  // 标题方法
+  Widget _titleWidget(){
+    return Container(
+      alignment: Alignment.centerLeft,
+      padding: EdgeInsets.fromLTRB(10.0, 2.0, 0.0, 5.0),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border(
+          bottom: BorderSide(width: 0.5, color: Colors.black12)
+        )
+      ),
+      child: Text('商品推荐', style: TextStyle(color: Colors.pink),),
+    );
+  }
+
+  // 推荐商品item方法
+  Widget _itemGoods(index){
+    return InkWell(
+      onTap: (){
+
+      },
+      child: Container(
+        height: ScreenUtil().setHeight(330),
+        width: ScreenUtil().setWidth(250),
+        padding: EdgeInsets.all(8.0),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border(
+            left: BorderSide(width: 0.5, color: Colors.black12)
+          )
+        ),
+        child: Column(
+          children: <Widget>[
+            Image.asset(recommedList[index]['image'], width: ScreenUtil().setWidth(200),height: ScreenUtil().setHeight(200),),
+            Text('￥${recommedList[index]['cost']}'),
+            Text('￥${recommedList[index]['oldCost']}',
+            style: TextStyle(
+              decoration: TextDecoration.lineThrough,
+              color: Colors.grey,
+              fontSize: 12.0,
+            ))
+          ],
+        ),
+      ),
+    );
+  }
+
+  // 横向列表方法
+  Widget _recommendList(){
+    return Container(
+      height: ScreenUtil().setHeight(400),
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: recommedList.length,
+        itemBuilder: (context, index){
+          return _itemGoods(index);
+        },
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: ScreenUtil().setHeight(500),
+      margin: EdgeInsets.only(top: 10.0),
+      child: Column(
+        children: <Widget>[
+          _titleWidget(),
+          _recommendList()
+        ],
+      ),
+    );
   }
 }
