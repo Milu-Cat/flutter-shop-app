@@ -78,6 +78,14 @@ flutter:
   - image/recommend5.jpg
   - image/recommend6.jpg
   - image/recommend7.jpg
+
+  - image/floor1.jpg
+  - image/floor2.jpg
+  - image/floor3.jpg
+  - image/floor4.jpg
+  - image/floor5.jpg
+  - image/floor6.jpg
+
   
   #  - images/a_dot_ham.jpeg
 

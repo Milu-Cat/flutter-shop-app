@@ -31,6 +31,8 @@ class _HomePageState extends State<HomePage> {
             String adTell = data['data']['adTell']['image'];
             String leaderPhone = data['data']['adTell']['leaderPhone'];
             List<Map> recommendList = (data['data']['recommend'] as List).cast();
+            String floorImg = data['data']['floorTitle'];
+            List<Map> floorContentList = (data['data']['floor'] as List).cast();
             return SingleChildScrollView(
               child:  Column(
                 children: <Widget>[
@@ -38,7 +40,9 @@ class _HomePageState extends State<HomePage> {
                   TopNavigator(navigatorList: navigatorList),
                   AdBanner(adPicture:adPicture),
                   AdTell(adTell: adTell, leaderPhone: leaderPhone),
-                  Recommed(recommedList: recommendList,)
+                  Recommed(recommedList: recommendList,),
+                  FloorTitle(floorImg: floorImg),
+                  FloorContent(floorContentList: floorContentList,)
                 ],
               ),
             );
@@ -212,7 +216,8 @@ class Recommed extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border(
-            left: BorderSide(width: 0.5, color: Colors.black12)
+            left: BorderSide(width: 0.5, color: Colors.black12),
+            bottom: BorderSide(width: 0.5, color: Colors.black12)
           )
         ),
         child: Column(
@@ -234,7 +239,7 @@ class Recommed extends StatelessWidget {
   // 横向列表方法
   Widget _recommendList(){
     return Container(
-      height: ScreenUtil().setHeight(400),
+      height: ScreenUtil().setHeight(350),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: recommedList.length,
@@ -248,7 +253,8 @@ class Recommed extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ScreenUtil().setHeight(500),
+      // color: Colors.pink,
+      height: ScreenUtil().setHeight(425),
       margin: EdgeInsets.only(top: 10.0),
       child: Column(
         children: <Widget>[
@@ -258,4 +264,84 @@ class Recommed extends StatelessWidget {
       ),
     );
   }
+}
+
+
+// 楼层标题
+class FloorTitle extends StatelessWidget {
+
+  final String floorImg;
+  FloorTitle({this.floorImg});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border(
+          bottom: BorderSide(width: 0.5, color: Colors.black12)
+        )
+      ),
+      margin: EdgeInsets.only(top: 10.0),
+      // padding: EdgeInsets.all(8.0),
+      child: Image.asset(floorImg),
+    );
+  }
+}
+
+// 楼层内容
+class FloorContent extends StatelessWidget {
+  final List floorContentList;
+  FloorContent({this.floorContentList});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: <Widget>[
+          _firstRow(),
+          _otherGoods()
+        ],
+      ),
+    );
+  }
+
+  Widget _firstRow(){
+    return Row(
+      children: <Widget>[
+        _goodsItem(floorContentList[0]),
+        Column(
+          children: <Widget>[
+            _goodsItem(floorContentList[1]),
+            _goodsItem(floorContentList[2]),
+          ],
+        )
+      ],
+    );
+  }
+  Widget _otherGoods(){
+    return Row(
+      children: <Widget>[
+        _goodsItem(floorContentList[3]),
+        _goodsItem(floorContentList[4]),
+      ],
+    );
+  }
+  Widget _goodsItem(Map goods){
+  print(goods);
+    return Container(
+      decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border(
+            left: BorderSide(width: 0.5, color: Colors.black12),
+            bottom: BorderSide(width: 0.5, color: Colors.black12)
+          )
+      ),
+      width: ScreenUtil().setWidth(540),
+      child: InkWell(
+        onTap: (){print('点击了该商品');},
+        child: Image.asset(goods['image']),
+      ),
+    );
+  }
+
 }

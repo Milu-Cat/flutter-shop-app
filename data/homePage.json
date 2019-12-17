@@ -14,43 +14,43 @@
     "topNavigator": [
       {
         "image": "image/top_navigator1.jpg",
-        "topTitle": "超市"
+        "topTitle": "裙子"
       },
       {
         "image": "image/top_navigator2.jpg",
-        "topTitle": "超市"
+        "topTitle": "女衣"
       },
       {
         "image": "image/top_navigator3.jpg",
-        "topTitle": "超市"
+        "topTitle": "零食"
       },
       {
         "image": "image/top_navigator4.jpg",
-        "topTitle": "超市"
+        "topTitle": "美妆"
       },
       {
         "image": "image/top_navigator5.jpg",
-        "topTitle": "超市"
+        "topTitle": "套装"
       },
       {
         "image": "image/top_navigator6.jpg",
-        "topTitle": "超市"
+        "topTitle": "男鞋"
       },
       {
         "image": "image/top_navigator7.jpg",
-        "topTitle": "超市"
+        "topTitle": "女鞋"
       },
       {
         "image": "image/top_navigator8.jpg",
-        "topTitle": "超市"
+        "topTitle": "上衣"
       },
       {
         "image": "image/top_navigator9.jpg",
-        "topTitle": "超市"
+        "topTitle": "家居"
       },
       {
         "image": "image/top_navigator10.jpg",
-        "topTitle": "超市"
+        "topTitle": "清仓"
       }
     ],
     "adPicture": {
@@ -95,6 +95,24 @@
         "image": "image/recommend7.jpg",
         "cost": "1200",
         "oldCost": "1359"
+      }
+    ],
+    "floorTitle": "image/floor1.jpg",
+    "floor": [
+      {
+        "image": "image/floor2.jpg"
+      },
+      {
+        "image": "image/floor3.jpg"
+      },
+      {
+        "image": "image/floor4.jpg"
+      },
+      {
+        "image": "image/floor5.jpg"
+      },
+      {
+        "image": "image/floor6.jpg"
       }
     ]
   }
