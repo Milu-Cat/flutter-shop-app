@@ -12,6 +12,9 @@ class IndexPage extends StatefulWidget {
 }
 
 class _IndexPageState extends State<IndexPage> {
+ // 保持页面状态加入代码--start
+  PageController _pageController;
+  // 保持页面状态加入代码--end
 
   final List<BottomNavigationBarItem> bottomTabs = [
     BottomNavigationBarItem(
@@ -32,7 +35,7 @@ class _IndexPageState extends State<IndexPage> {
     )
   ];
 
-  final List tabBodies = [  // 底部导航栏对应的页面数组
+  final List<Widget> tabBodies = [  // 底部导航栏对应的页面数组
     HomePage(),
     CategoryPage(),
     CartPage(),
@@ -45,6 +48,16 @@ class _IndexPageState extends State<IndexPage> {
   @override
   void initState() {
     currentPage = tabBodies[currentIndex];
+    // 保持页面状态加入代码--start
+    _pageController=new PageController()
+      ..addListener(() {
+        if (currentPage != _pageController.page.round()) {
+          setState(() {
+            currentPage = _pageController.page.round();
+          });
+        }
+    });
+    // 保持页面状态加入代码--end
     super.initState();
   }
 
@@ -69,7 +82,15 @@ class _IndexPageState extends State<IndexPage> {
           });
         },
       ),
-      body: currentPage, // 把页面呈现
+
+      // body: currentPage // 未实现保存页面状态之前代码
+
+      // 保持页面状态加入代码--start
+      body: IndexedStack(  //IndexedStack 作用是保持页面状态
+        index: currentIndex,
+        children: tabBodies
+      )
+      // 保持页面状态加入代码--end
     );
   }
 }

@@ -114,6 +114,86 @@
       {
         "image": "image/floor6.jpg"
       }
-    ]
+    ],
+    "hotGoods":{
+      "page1": [
+        {
+          "image": "image/hotGoods5.jpg",
+          "title": "brir气质流行白天鹅耳钉",
+          "oldCost": "￥260",
+          "cost": "￥199"
+        },
+        {
+          "image": "image/hotGoods6.jpg",
+          "title": "乔丹新品减震耐磨篮球鞋",
+          "oldCost": "￥560",
+          "cost": "￥399"
+        },
+        {
+          "image": "image/hotGoods7.jpg",
+          "title": "耐克经典时尚跑步鞋",
+          "oldCost": "￥450",
+          "cost": "￥369"
+        },
+        {
+          "image": "image/hotGoods8.jpg",
+          "title": "阿迪达斯专业级篮球鞋",
+          "oldCost": "￥699",
+          "cost": "￥559"
+        }
+      ],
+      "page2": [
+        {
+          "image": "image/hotGoods9.jpg",
+          "title": "天王沧海系列商务石英手表",
+          "oldCost": "￥2299",
+          "cost": "￥1899"
+        },
+        {
+          "image": "image/hotGoods10.jpg",
+          "title": "潮流真皮石英男表",
+          "oldCost": "￥599",
+          "cost": "￥499"
+        },
+        {
+          "image": "image/hotGoods11.jpg",
+          "title": "型男商务必备石英男士手表百搭",
+          "oldCost": "￥1569",
+          "cost": "￥1260"
+        },
+        {
+          "image": "image/hotGoods12.jpg",
+          "title": "100%山羊绒秋冬新款情侣素色羊绒围巾亲肤保暖男女款围巾",
+          "oldCost": "￥359",
+          "cost": "￥279"
+        }
+      ],
+      "page3":[
+        {
+          "image": "image/hotGoods13.jpg",
+          "title": "时尚潮流减震护脚腕篮球鞋",
+          "oldCost": "￥179",
+          "cost": "￥129"
+        },
+        {
+          "image": "image/hotGoods14.jpg",
+          "title": "2019新款围巾双面保暖大披肩女款围脖女士仿羊绒围巾女",
+          "oldCost": "￥389",
+          "cost": "￥299"
+        },
+        {
+          "image": "image/hotGoods15.jpg",
+          "title": "2019新款网红爆款围巾韩版纯色毛线保暖多用围脖披肩围巾女款",
+          "oldCost": "￥159",
+          "cost": "￥109"
+        },
+        {
+          "image": "image/hotGoods16.jpg",
+          "title": "纯棉大床四件套",
+          "oldCost": "￥299",
+          "cost": "￥239"
+        }
+      ]
+    }
   }
 }

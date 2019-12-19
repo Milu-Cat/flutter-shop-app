@@ -9,9 +9,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: MaterialApp(
-        title: '百姓生活+',
+        title: 'Flutter Shop',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(primaryColor: Colors.green[100],splashColor: Colors.transparent),
+        theme: ThemeData(primaryColor: Colors.pink,splashColor: Colors.transparent),
         home: IndexPage()
       ),
     );
