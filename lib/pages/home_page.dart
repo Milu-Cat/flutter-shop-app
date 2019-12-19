@@ -16,11 +16,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {  // 混入AutomaticKeepAliveClientMixin是为了保持页面状态
   @override
   bool get wantKeepAlive =>true;  // 混入AutomaticKeepAliveClientMixin必须写上这行代码
-  @override
-  void initState() {
-    super.initState();
-     print('111111111111111111111111111');
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //    print('111111111111111111111111111');
+  // }
 
   int page =1;
   List<Map> hotGoddsList = [
@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Shop'),
+        title: Text('首页'),
       ),
       body: FutureBuilder(
         future: DefaultAssetBundle.of(context).loadString("data/homePage.json"),

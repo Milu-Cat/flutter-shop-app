@@ -50,6 +50,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
   - data/homePage.json
+  - data/category.json
 
   - image/home_swiper1.jpg
   - image/home_swiper2.jpg
