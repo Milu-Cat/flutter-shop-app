@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'pages/index_page.dart';
-// http://v.jspang.com:8088/baixing/
+import 'package:provide/provide.dart';  //把状态管理引入到main.dart中
+import './provide/category.dart';
 
-void main()=>runApp(MyApp());
+void main(){
+  var category =ChangeRightList();
+  var providers  =Providers();
+  providers
+    ..provide(Provider<ChangeRightList>.value(category));
+  runApp(ProviderNode(child:MyApp(),providers:providers));
+}
 
 class MyApp extends StatelessWidget {
   @override

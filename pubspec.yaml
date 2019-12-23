@@ -29,6 +29,7 @@ dependencies:
   flutter_screenutil : ^0.7.0
   url_launcher: ^5.0.1
   flutter_easyrefresh: ^2.0.8
+  provide: ^1.0.2  #状态管理组件，谷歌出品
 
 # 上线不需要，只是测试阶段需要的第三方库，放在dev_dependencies里，这样上线打包不会打包进去
 dev_dependencies:
@@ -104,6 +105,63 @@ flutter:
   - image/hotGoods14.jpg
   - image/hotGoods15.jpg
   - image/hotGoods16.jpg
+
+  - image/category/man/man1.jpg
+  - image/category/man/man2.jpg
+  - image/category/man/man3.jpg
+  - image/category/man/man4.jpg
+  - image/category/man/man5.jpg
+  - image/category/man/man6.jpg
+  - image/category/man/man7.jpg
+  - image/category/man/man8.jpg
+  - image/category/man/man9.jpg
+  - image/category/man/man10.jpg
+  - image/category/man/man11.jpg
+  - image/category/man/man12.jpg
+  - image/category/man/man13.jpg
+  - image/category/man/man14.jpg
+  - image/category/man/man15.jpg
+  - image/category/man/man16.jpg
+  - image/category/man/man17.jpg
+  - image/category/man/man18.jpg
+  - image/category/man/man19.png
+  - image/category/man/man20.jpg
+  - image/category/man/man21.jpg
+  - image/category/man/man22.jpg
+  - image/category/man/man23.jpg
+  - image/category/man/man24.jpg
+  - image/category/man/man25.jpg
+  - image/category/man/man26.jpg
+  - image/category/man/man27.jpg
+
+  - image/category/woman/woman1.jpg
+  - image/category/woman/woman2.jpg
+  - image/category/woman/woman3.jpg
+  - image/category/woman/woman4.jpg
+  - image/category/woman/woman5.jpg
+  - image/category/woman/woman6.jpg
+  - image/category/woman/woman7.jpg
+  - image/category/woman/woman8.jpg
+  - image/category/woman/woman9.jpg
+  - image/category/woman/woman10.jpg
+  - image/category/woman/woman11.jpg
+  - image/category/woman/woman12.jpg
+  - image/category/woman/woman13.jpg
+  - image/category/woman/woman14.jpg
+  - image/category/woman/woman15.jpg
+  - image/category/woman/woman16.jpg
+  - image/category/woman/woman17.jpg
+  - image/category/woman/woman18.jpg
+  - image/category/woman/woman19.jpg
+  - image/category/woman/woman20.jpg
+  - image/category/woman/woman21.jpg
+  - image/category/woman/woman22.jpg
+  - image/category/woman/woman23.jpg
+  - image/category/woman/woman24.jpg
+  - image/category/woman/woman25.jpg
+  - image/category/woman/woman26.jpg
+  - image/category/woman/woman27.jpg
+
 
   
 
