@@ -28,12 +28,20 @@ class _CategoryPageState extends State<CategoryPage> {
             List<dynamic> rightListInitTwo = (data['man']['two'] as List).cast();
             List<dynamic> rightListInitThree = (data['man']['three'] as List).cast();
             List<dynamic> rightListMan = (data['man']['one'] as List).cast();
+            List<dynamic> rightListManTwo = (data['man']['two'] as List).cast();
+            List<dynamic> rightListManThree = (data['man']['three'] as List).cast();
             List<dynamic> rightListWoman = (data['woman']['one'] as List).cast();
+            List<dynamic> rightListWomanTwo = (data['woman']['two'] as List).cast();
+            List<dynamic> rightListWomanThree = (data['woman']['three'] as List).cast();
             Provide.value<ChangeRightList>(context).changeList(rightListInit);
             Provide.value<ChangeRightList>(context).changeListTwo(rightListInitTwo);
             Provide.value<ChangeRightList>(context).changeListThree(rightListInitThree);
             Provide.value<ChangeRightList>(context).changeManList(rightListMan);
+            Provide.value<ChangeRightList>(context).changeManTwoList(rightListManTwo);
+            Provide.value<ChangeRightList>(context).changeManThreeList(rightListManThree);
             Provide.value<ChangeRightList>(context).changeWomanList(rightListWoman);
+            Provide.value<ChangeRightList>(context).changeWomanListTwo(rightListWomanTwo);
+            Provide.value<ChangeRightList>(context).changeWomanListThree(rightListWomanThree);
             return Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -90,8 +98,40 @@ class _LeftCategoryListState extends State<LeftCategoryList> {
         await Future.delayed(Duration(microseconds: 500), (){
           if(index == 0){
             Provide.value<ChangeRightList>(context).changeList(Provide.value<ChangeRightList>(context).man);
+            Provide.value<ChangeRightList>(context).changeListTwo(Provide.value<ChangeRightList>(context).manTwo);
+            Provide.value<ChangeRightList>(context).changeListThree(Provide.value<ChangeRightList>(context).manThree);
           }else if(index ==1){
             Provide.value<ChangeRightList>(context).changeList(Provide.value<ChangeRightList>(context).woman);
+            Provide.value<ChangeRightList>(context).changeListTwo(Provide.value<ChangeRightList>(context).womanTwo);
+            Provide.value<ChangeRightList>(context).changeListThree(Provide.value<ChangeRightList>(context).womanThree);
+          }else if(index ==2){
+           Provide.value<ChangeRightList>(context).changeList(Provide.value<ChangeRightList>(context).man);
+            Provide.value<ChangeRightList>(context).changeListTwo(Provide.value<ChangeRightList>(context).manTwo);
+            Provide.value<ChangeRightList>(context).changeListThree(Provide.value<ChangeRightList>(context).manThree);
+          }else if(index ==3){
+            Provide.value<ChangeRightList>(context).changeList(Provide.value<ChangeRightList>(context).woman);
+            Provide.value<ChangeRightList>(context).changeListTwo(Provide.value<ChangeRightList>(context).womanTwo);
+            Provide.value<ChangeRightList>(context).changeListThree(Provide.value<ChangeRightList>(context).womanThree);
+          }else if(index ==4){
+            Provide.value<ChangeRightList>(context).changeList(Provide.value<ChangeRightList>(context).man);
+            Provide.value<ChangeRightList>(context).changeListTwo(Provide.value<ChangeRightList>(context).manTwo);
+            Provide.value<ChangeRightList>(context).changeListThree(Provide.value<ChangeRightList>(context).manThree);
+          }else if(index ==5){
+           Provide.value<ChangeRightList>(context).changeList(Provide.value<ChangeRightList>(context).woman);
+            Provide.value<ChangeRightList>(context).changeListTwo(Provide.value<ChangeRightList>(context).womanTwo);
+            Provide.value<ChangeRightList>(context).changeListThree(Provide.value<ChangeRightList>(context).womanThree);
+          }else if(index ==6){
+            Provide.value<ChangeRightList>(context).changeList(Provide.value<ChangeRightList>(context).man);
+            Provide.value<ChangeRightList>(context).changeListTwo(Provide.value<ChangeRightList>(context).manTwo);
+            Provide.value<ChangeRightList>(context).changeListThree(Provide.value<ChangeRightList>(context).manThree);
+          }else if(index ==7){
+            Provide.value<ChangeRightList>(context).changeList(Provide.value<ChangeRightList>(context).woman);
+            Provide.value<ChangeRightList>(context).changeListTwo(Provide.value<ChangeRightList>(context).womanTwo);
+            Provide.value<ChangeRightList>(context).changeListThree(Provide.value<ChangeRightList>(context).womanThree);
+          }else if(index ==8){
+             Provide.value<ChangeRightList>(context).changeList(Provide.value<ChangeRightList>(context).man);
+            Provide.value<ChangeRightList>(context).changeListTwo(Provide.value<ChangeRightList>(context).manTwo);
+            Provide.value<ChangeRightList>(context).changeListThree(Provide.value<ChangeRightList>(context).manThree);
           }
         });
         
@@ -102,7 +142,7 @@ class _LeftCategoryListState extends State<LeftCategoryList> {
         child: Center(
           child: Text(widget.leftList[index]['mallCategoryName'], 
           style: listIndex == index ? TextStyle(fontSize: ScreenUtil().setSp(33), color: Colors.pink, fontWeight: FontWeight.w600) : TextStyle(fontSize: ScreenUtil().setSp(30))),
-        )
+        ),
       ),
     );
   }
@@ -127,7 +167,7 @@ class _RightListState extends State<RightList> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(  
-            child: Text('男士外套',style: TextStyle(fontWeight: FontWeight.bold, fontSize: ScreenUtil().setWidth(30)),),
+            child: Text('新品上市',style: TextStyle(fontWeight: FontWeight.bold, fontSize: ScreenUtil().setWidth(30)),),
           ),
           Container(
             padding: EdgeInsets.only(left: 25, right: 25, top:10),
@@ -136,28 +176,28 @@ class _RightListState extends State<RightList> {
               children: tagItem(Provide.value<ChangeRightList>(context).valueOne, 'valueOne'),
             ),
           ),
-          // Container(
-          //   margin: EdgeInsets.only(top: 10.0 ),
-          //   child: Text('男士裤装',style: TextStyle(fontWeight: FontWeight.bold, fontSize: ScreenUtil().setWidth(30)),),
-          // ),
-          // Container(
-          //   padding: EdgeInsets.only(left: 25, right: 25, top:10),
-          //   child: Wrap(
-          //     spacing:25,
-          //     children: tagItem(Provide.value<ChangeRightList>(context).valueTwo,'valueTwo'),
-          //   ),
-          // ),
-          // Container(
-          //   margin: EdgeInsets.only(top: 10.0 ),
-          //   child: Text('男士内搭',style: TextStyle(fontWeight: FontWeight.bold, fontSize: ScreenUtil().setWidth(30)),),
-          // ),
-          // Container(
-          //   padding: EdgeInsets.only(left: 25, right: 25, top:10),
-          //   child: Wrap(
-          //     spacing:25,
-          //     children: tagItem(Provide.value<ChangeRightList>(context).valueThree, 'valueThree'),
-          //   ),
-          // )
+          Container(
+            margin: EdgeInsets.only(top: 10.0 ),
+            child: Text('潮流街区',style: TextStyle(fontWeight: FontWeight.bold, fontSize: ScreenUtil().setWidth(30)),),
+          ),
+          Container(
+            padding: EdgeInsets.only(left: 25, right: 25, top:10),
+            child: Wrap(
+              spacing:25,
+              children: tagItem(Provide.value<ChangeRightList>(context).valueTwo,'valueTwo'),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 10.0 ),
+            child: Text('热卖佳品',style: TextStyle(fontWeight: FontWeight.bold, fontSize: ScreenUtil().setWidth(30)),),
+          ),
+          Container(
+            padding: EdgeInsets.only(left: 25, right: 25, top:10),
+            child: Wrap(
+              spacing:25,
+              children: tagItem(Provide.value<ChangeRightList>(context).valueThree, 'valueThree'),
+            ),
+          )
         ],
       )
     ),
@@ -165,7 +205,7 @@ class _RightListState extends State<RightList> {
   );
   }
 
-  List<Widget> tagItem(data, type) => List.generate(data.length, (index) {
+  List<Widget> tagItem(data, String type) => List.generate(data.length, (index) {
         return Container(
           width: ScreenUtil().setWidth(180),
           height: ScreenUtil().setHeight(230),
@@ -181,24 +221,22 @@ class _RightListState extends State<RightList> {
                     builder: (BuildContext context, Widget child, rightList) {
                       if(type == 'valueOne'){
                         return Image.asset(rightList.valueOne[index]['image'],width: ScreenUtil().setWidth(180),height: ScreenUtil().setHeight(180));
+                      }else if(type == 'valueTwo'){
+                        return Image.asset(rightList.valueTwo[index]['image'],width: ScreenUtil().setWidth(180),height: ScreenUtil().setHeight(180));
+                      }else if(type == 'valueThree'){
+                        return Image.asset(rightList.valueThree[index]['image'],width: ScreenUtil().setWidth(180),height: ScreenUtil().setHeight(180));
                       }
-                      // else if(type == 'valueTwo'){
-                      //   return Image.asset(rightList.valueTwo[index]['image'],width: ScreenUtil().setWidth(180),height: ScreenUtil().setHeight(180));
-                      // }else if(type == 'valueThree'){
-                      //   return Image.asset(rightList.valueThree[index]['image'],width: ScreenUtil().setWidth(180),height: ScreenUtil().setHeight(180));
-                      // }
                     },
                   ),
                   Provide<ChangeRightList>(
                     builder: (BuildContext context, Widget child, rightList) {
                       if(type == 'valueOne'){
                         return Text(rightList.valueOne[index]['title'], style: TextStyle(fontSize: 10),);
+                      }else if(type == 'valueTwo'){
+                        return Text(rightList.valueTwo[index]['title'], style: TextStyle(fontSize: 10),);
+                      }else if(type == 'valueThree'){
+                        return Text(rightList.valueThree[index]['title'], style: TextStyle(fontSize: 10),);
                       }
-                      // else if(type == 'valueTwo'){
-                      //   return Text(rightList.valueTwo[index]['title'], style: TextStyle(fontSize: 10),);
-                      // }else if(type == 'valueThree'){
-                      //   return Text(rightList.valueThree[index]['title'], style: TextStyle(fontSize: 10),);
-                      // }
                     },
                   ),
                 ],
@@ -210,38 +248,3 @@ class _RightListState extends State<RightList> {
       });
 
 }
-
-
-// 右侧子分类列表item
-// class RightListItem extends StatelessWidget {
-//   // String itemTitle;
-//   // RightListItem({this.itemTitle});
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       child: Provide<ChangeRightList>(
-//       builder: (context, child, category){
-//         return Container(
-//           child: ListView.builder(
-//             // scrollDirection: Axis.horizontal,
-//             itemCount: category.value.length,
-//             itemBuilder: (context, index){
-//               return _inkWellRight(category.value[index]['image']);
-//             },
-//           ),
-//         );
-//       }
-//     )
-//     );
-//   }
-// }
-
-
-// Widget _inkWellRight(String url){
-//   return InkWell(
-//     onTap: (){
-//     },
-//     child: Image.asset(url),
-//   );
-// }
-

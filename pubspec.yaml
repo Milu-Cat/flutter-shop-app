@@ -30,6 +30,7 @@ dependencies:
   url_launcher: ^5.0.1
   flutter_easyrefresh: ^2.0.8
   provide: ^1.0.2  #状态管理组件，谷歌出品
+  fluro: "^1.5.1"
 
 # 上线不需要，只是测试阶段需要的第三方库，放在dev_dependencies里，这样上线打包不会打包进去
 dev_dependencies:

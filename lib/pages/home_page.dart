@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:ui';
 import 'package:flutter_easyrefresh/easy_refresh.dart'; // 上拉获取新的数据插件
+import '../router/application.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -163,24 +164,6 @@ class TopNavigator extends StatelessWidget {
   final List navigatorList;
   TopNavigator({this.navigatorList});
 
-  Widget _gridViewItemUi(BuildContext context, item){
-    return InkWell(
-      onTap: (){
-        print('跳转');
-      },
-      child: Column(children: <Widget>[
-        Container(
-          // color: Colors.green,
-          alignment: Alignment.center,
-          child: ClipOval(
-            child:Image.asset(item['image'], width:ScreenUtil().setWidth(95)),
-          ),
-        ),
-        Text(item['topTitle'],style: TextStyle(fontSize: 11.0),)
-      ],),
-    );
-  }
-  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -194,6 +177,25 @@ class TopNavigator extends StatelessWidget {
           return _gridViewItemUi(context, item);
         }).toList()
       ),
+    );
+  }
+
+    Widget _gridViewItemUi(BuildContext context, item){
+    return InkWell(
+      onTap: (){
+        print('跳转');
+        Application.router.navigateTo(context, "/details?id='hotOne'");
+      },
+      child: Column(children: <Widget>[
+        Container(
+          // color: Colors.green,
+          alignment: Alignment.center,
+          child: ClipOval(
+            child:Image.asset(item['image'], width:ScreenUtil().setWidth(95)),
+          ),
+        ),
+        Text(item['topTitle'],style: TextStyle(fontSize: 11.0),)
+      ],),
     );
   }
 }
@@ -210,7 +212,7 @@ class AdBanner extends StatelessWidget {
     return Container(
       height: ScreenUtil().setHeight(260.0),
       width: ScreenUtil().setWidth(1080.0) ,
-      color: Colors.green,
+      // color: Colors.green,
       child: Image.asset(adPicture, fit: BoxFit.cover), 
     );
   }
@@ -425,7 +427,7 @@ class HotGoods extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: _hotGoods(),
+      child: _hotGoods(context),
     );
   }
 
@@ -446,12 +448,13 @@ class HotGoods extends StatelessWidget {
   }
 
   //火爆专区内容
-  Widget _hotContent(){
+  Widget _hotContent(BuildContext context){
     if(hotGoddsList.length != 0){
       List<Widget> listWidget = hotGoddsList.map((val){
         return InkWell(
           onTap: (){
             print('点击了火爆商品');
+             Application.router.navigateTo(context, "/details?id='hotOne'");  // 跳到商品详情页
           },
             child: Container(
               width: ScreenUtil().setWidth(500),
@@ -514,12 +517,12 @@ class HotGoods extends StatelessWidget {
   }
 
   // 火爆专区整合标题和内容
-  Widget _hotGoods(){
+  Widget _hotGoods(BuildContext context){
     return Container(
       child: Column(
         children: <Widget>[
           _hotTitle(),
-          _hotContent()
+          _hotContent(context)
         ],
       ),
     );
