@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provide/provide.dart';
 import '../provide/category.dart';
-
+import '../router/application.dart';
 
 class CategoryPage extends StatefulWidget {
   @override
@@ -139,10 +139,19 @@ class _LeftCategoryListState extends State<LeftCategoryList> {
       child: Container(
         height: ScreenUtil().setHeight(110),
         color: listIndex == index? Colors.white: Color.fromRGBO(247, 247, 247, 1),
-        child: Center(
-          child: Text(widget.leftList[index]['mallCategoryName'], 
-          style: listIndex == index ? TextStyle(fontSize: ScreenUtil().setSp(33), color: Colors.pink, fontWeight: FontWeight.w600) : TextStyle(fontSize: ScreenUtil().setSp(30))),
-        ),
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border(
+              left: BorderSide(
+                width: ScreenUtil().setWidth(10), color: listIndex == index ? Colors.pink: Color.fromRGBO(247, 247, 247, 1)
+              )
+            )
+          ),
+          child: Center(
+            child: Text(widget.leftList[index]['mallCategoryName'], 
+            style: listIndex == index ? TextStyle(fontSize: ScreenUtil().setSp(33), color: Colors.pink, fontWeight: FontWeight.w600) : TextStyle(fontSize: ScreenUtil().setSp(30))),
+          ),
+        )
       ),
     );
   }
@@ -212,7 +221,7 @@ class _RightListState extends State<RightList> {
           margin: EdgeInsets.only(bottom: 5.0 ),
           child: InkWell(
             onTap: (){
-              print('点击了右侧商品');
+              Application.router.navigateTo(context, "/details?id='hotOne'");  // 跳到商品详情页
             },
             child: Center(
               child: Column(

@@ -138,19 +138,21 @@ class SwiperDiy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    print('设备宽度:${ScreenUtil.screenWidth}');
-    print('设备高度:${ScreenUtil.screenHeight}');
-    print('设备像素密度:${ScreenUtil.pixelRatio}');
-    
     return Container(
       height: ScreenUtil().setHeight(370),
       width: ScreenUtil().setWidth(1794.0),
       child: Swiper(
         itemBuilder: (BuildContext context, int index){
-          return Image.asset("${swiperDataList[index]['image']}", fit: BoxFit.fill);
+          return InkWell(
+            onTap: (){
+              Application.router.navigateTo(context, "/details?id='hotOne'");  // 跳到商品详情页
+            },
+            child: Image.asset("${swiperDataList[index]['image']}", fit: BoxFit.fill),
+          );
+          
         },
         itemCount: 3,
-        pagination: SwiperPagination(),  //是否显示指示点
+        pagination: SwiperPagination.fraction,  //是否显示指示点
         autoplay: true, //自动播放
       ),
     );
@@ -168,7 +170,7 @@ class TopNavigator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // color: Colors.grey,
-      height: ScreenUtil().setHeight(465),
+      height: ScreenUtil().setHeight(390),
       padding: const EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 0.0),
       child: GridView.count(
         crossAxisCount: 5,
@@ -183,8 +185,7 @@ class TopNavigator extends StatelessWidget {
     Widget _gridViewItemUi(BuildContext context, item){
     return InkWell(
       onTap: (){
-        print('跳转');
-        Application.router.navigateTo(context, "/details?id='hotOne'");
+        Application.router.navigateTo(context, "/goods-list?id='hotOne'"); // 跳到商品列表页
       },
       child: Column(children: <Widget>[
         Container(
@@ -213,7 +214,13 @@ class AdBanner extends StatelessWidget {
       height: ScreenUtil().setHeight(260.0),
       width: ScreenUtil().setWidth(1080.0) ,
       // color: Colors.green,
-      child: Image.asset(adPicture, fit: BoxFit.cover), 
+      child: InkWell(
+        onTap: (){
+          Application.router.navigateTo(context, "/goods-list?id='hotOne'"); // 跳到商品列表页
+        },
+        child: Image.asset(adPicture, fit: BoxFit.cover),
+      )
+      
     );
   }
 }
@@ -276,10 +283,10 @@ class Recommed extends StatelessWidget {
   }
 
   // 推荐商品item方法
-  Widget _itemGoods(index){
+  Widget _itemGoods(context,index){
     return InkWell(
       onTap: (){
-
+        Application.router.navigateTo(context, "/details?id='hotOne'");  // 跳到商品详情页
       },
       child: Container(
         height: ScreenUtil().setHeight(330),
@@ -316,7 +323,7 @@ class Recommed extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: recommedList.length,
         itemBuilder: (context, index){
-          return _itemGoods(index);
+          return _itemGoods(context, index);
         },
       ),
     );
@@ -356,7 +363,12 @@ class FloorTitle extends StatelessWidget {
       ),
       margin: EdgeInsets.only(top: 10.0),
       // padding: EdgeInsets.all(8.0),
-      child: Image.asset(floorImg),
+      child: InkWell(
+        onTap: (){
+          Application.router.navigateTo(context, "/goods-list?id='hotOne'"); // 跳到商品列表页
+        },
+        child: Image.asset(floorImg),
+      )
     );
   }
 }
@@ -370,35 +382,35 @@ class FloorContent extends StatelessWidget {
     return Container(
       child: Column(
         children: <Widget>[
-          _firstRow(),
-          _otherGoods()
+          _firstRow(context),
+          _otherGoods(context)
         ],
       ),
     );
   }
 
-  Widget _firstRow(){
+  Widget _firstRow(BuildContext context){
     return Row(
       children: <Widget>[
-        _goodsItem(floorContentList[0], 460),
+        _goodsItem(context,floorContentList[0], 460),
         Column(
           children: <Widget>[
-            _goodsItem(floorContentList[1], 230),
-            _goodsItem(floorContentList[2], 230),
+            _goodsItem(context,floorContentList[1], 230),
+            _goodsItem(context,floorContentList[2], 230),
           ],
         )
       ],
     );
   }
-  Widget _otherGoods(){
+  Widget _otherGoods(BuildContext context){
     return Row(
       children: <Widget>[
-        _goodsItem(floorContentList[3],220),
-        _goodsItem(floorContentList[4], 220),
+        _goodsItem(context,floorContentList[3],220),
+        _goodsItem(context,floorContentList[4], 220),
       ],
     );
   }
-  Widget _goodsItem(Map goods, int height){
+  Widget _goodsItem(context, Map goods, int height){
     return Container(
       decoration: BoxDecoration(
           color: Colors.white,
@@ -410,7 +422,9 @@ class FloorContent extends StatelessWidget {
       width: ScreenUtil().setWidth(540),
       height: ScreenUtil().setHeight(height),
       child: InkWell(
-        onTap: (){print('点击了该商品');},
+        onTap: (){  
+          Application.router.navigateTo(context, "/goods-list?id='hotOne'"); // 跳到商品列表页
+        },
         child: Image.asset(goods['image'], fit: BoxFit.cover),
       ),
     );

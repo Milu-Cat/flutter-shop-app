@@ -30,7 +30,7 @@ dependencies:
   url_launcher: ^5.0.1
   flutter_easyrefresh: ^2.0.8
   provide: ^1.0.2  #状态管理组件，谷歌出品
-  fluro: "^1.5.1"
+  fluro: "^1.5.1" #Flutter本身提供了路由机制，作个人的小型项目，完全足够了。但是如果你要作企业级开发，可能就会把入口文件变得臃肿不堪。而再Flutter问世之初，就已经了企业级路由方案fluro。
 
 # 上线不需要，只是测试阶段需要的第三方库，放在dev_dependencies里，这样上线打包不会打包进去
 dev_dependencies:
@@ -53,6 +53,7 @@ flutter:
   assets:
   - data/homePage.json
   - data/category.json
+  - data/goodsDateils.json
 
   - image/home_swiper1.jpg
   - image/home_swiper2.jpg
@@ -163,7 +164,32 @@ flutter:
   - image/category/woman/woman26.jpg
   - image/category/woman/woman27.jpg
 
-
+  - image/goods_details/goods_details1.jpg
+  - image/goods_details/goods_details2.jpg
+  - image/goods_details/goods_details3.jpg
+  - image/goods_details/goods_details4.jpg
+  - image/goods_details/goods_details5.jpg
+  - image/goods_details/goods_details6.jpg
+  - image/goods_details/goods_details7.jpg
+  - image/goods_details/goods_details8.jpg
+  - image/goods_details/goods_details9.jpg
+  - image/goods_details/goods_details10.jpg
+  - image/goods_details/goods_details11.jpg
+  - image/goods_details/goods_details12.jpg
+  - image/goods_details/goods_details13.jpg
+  - image/goods_details/goods_details14.jpg
+  - image/goods_details/goods_details15.jpg
+  - image/goods_details/goods_details16.jpg
+  - image/goods_details/goods_details17.jpg
+  - image/goods_details/goods_details18.jpg
+  - image/goods_details/goods_details19.jpg
+  - image/goods_details/goods_details20.jpg
+  - image/goods_details/goods_details21.jpg
+  - image/goods_details/goods_details22.jpg
+  - image/goods_details/goods_details23.jpg
+  - image/goods_details/goods_details24.jpg
+  - image/goods_details/goods_details25.jpg
+  
   
 
   
