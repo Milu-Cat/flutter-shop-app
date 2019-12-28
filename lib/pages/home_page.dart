@@ -145,7 +145,7 @@ class SwiperDiy extends StatelessWidget {
         itemBuilder: (BuildContext context, int index){
           return InkWell(
             onTap: (){
-              Application.router.navigateTo(context, "/details?id='hotOne'");  // 跳到商品详情页
+              Application.router.navigateTo(context, "/details?id='one'");  // 跳到商品详情页
             },
             child: Image.asset("${swiperDataList[index]['image']}", fit: BoxFit.fill),
           );
@@ -185,7 +185,7 @@ class TopNavigator extends StatelessWidget {
     Widget _gridViewItemUi(BuildContext context, item){
     return InkWell(
       onTap: (){
-        Application.router.navigateTo(context, "/goods-list?id='hotOne'"); // 跳到商品列表页
+        Application.router.navigateTo(context, "/goods-list?id='one'"); // 跳到商品列表页
       },
       child: Container(
         // color: Colors.green,
@@ -220,7 +220,7 @@ class AdBanner extends StatelessWidget {
       // color: Colors.green,
       child: InkWell(
         onTap: (){
-          Application.router.navigateTo(context, "/goods-list?id='hotOne'"); // 跳到商品列表页
+          Application.router.navigateTo(context, "/goods-list?id='one'"); // 跳到商品列表页
         },
         child: Image.asset(adPicture, fit: BoxFit.cover),
       )
@@ -290,7 +290,7 @@ class Recommed extends StatelessWidget {
   Widget _itemGoods(context,index){
     return InkWell(
       onTap: (){
-        Application.router.navigateTo(context, "/details?id='hotOne'");  // 跳到商品详情页
+        Application.router.navigateTo(context, "/details-anther?id='two'");  // 跳到商品详情页
       },
       child: Container(
         height: ScreenUtil().setHeight(330),
@@ -368,7 +368,7 @@ class FloorTitle extends StatelessWidget {
       // padding: EdgeInsets.all(8.0),
       child: InkWell(
         onTap: (){
-          Application.router.navigateTo(context, "/goods-list?id='hotOne'"); // 跳到商品列表页
+          Application.router.navigateTo(context, "/goods-list?id='one'"); // 跳到商品列表页
         },
         child: Image.asset(floorImg),
       )
@@ -426,7 +426,7 @@ class FloorContent extends StatelessWidget {
       height: ScreenUtil().setHeight(height),
       child: InkWell(
         onTap: (){  
-          Application.router.navigateTo(context, "/goods-list?id='hotOne'"); // 跳到商品列表页
+          Application.router.navigateTo(context, "/goods-list?id='one'"); // 跳到商品列表页
         },
         child: Image.asset(goods['image'], fit: BoxFit.cover),
       ),
@@ -470,8 +470,7 @@ class HotGoods extends StatelessWidget {
       List<Widget> listWidget = hotGoddsList.map((val){
         return InkWell(
           onTap: (){
-            print('点击了火爆商品');
-             Application.router.navigateTo(context, "/details?id='hotOne'");  // 跳到商品详情页
+             Application.router.navigateTo(context, "/details?id='one'");  // 跳到商品详情页
           },
             child: Container(
               width: ScreenUtil().setWidth(500),

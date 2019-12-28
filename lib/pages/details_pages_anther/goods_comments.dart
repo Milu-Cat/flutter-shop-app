@@ -37,7 +37,7 @@ class GoodsComments extends StatelessWidget {
 
   // 评论内容组件
   Widget _commentItem(BuildContext context, index){
-    final comment = Provide.value<GetGoodsDetails>(context).goodsInfo['goodInfo']['comment'];
+    final comment = Provide.value<GetGoodsDetails>(context).goodsInfoAnther['goodInfo']['comment'];
     return Container(
       padding: EdgeInsets.all(15.0),
       margin: EdgeInsets.only(bottom: 10.0),

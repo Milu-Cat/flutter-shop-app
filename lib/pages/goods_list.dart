@@ -119,8 +119,7 @@ class HotGoods extends StatelessWidget {
       List<Widget> listWidget = hotGoddsList.map((val){
         return InkWell(
           onTap: (){
-            print('点击了火爆商品');
-             Application.router.navigateTo(context, "/details?id='hotOne'");  // 跳到商品详情页
+             Application.router.navigateTo(context, "/details?id='One'");  // 跳到商品详情页
           },
             child: Container(
               width: ScreenUtil().setWidth(500),

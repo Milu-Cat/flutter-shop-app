@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:provide/provide.dart';
 import '../provide/goods_details.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import './details_pages/details_top_area.dart';
-import './details_pages/details_tabbar.dart';
-import './details_pages/details_bottom.dart';
+import './details_pages_anther/details_top_area.dart';
+import './details_pages_anther/details_tabbar.dart';
+import './details_pages_anther/details_bottom.dart';
 
-class DetailsPage extends StatelessWidget {
-    final String goodId;
-    DetailsPage(this.goodId);
+class DetailsPageAnther extends StatelessWidget {
+  final String goodsId;
+  DetailsPageAnther(this.goodsId);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+          return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -25,10 +25,10 @@ class DetailsPage extends StatelessWidget {
         title: Text('商品详情'),
       ),
       body: FutureBuilder(
-        future: DefaultAssetBundle.of(context).loadString("data/goodsDateils.json"),
+        future: DefaultAssetBundle.of(context).loadString("data/goodsDateilsOther.json"),
          builder: (context, snapshot){
           if(snapshot.hasData){
-            Provide.value<GetGoodsDetails>(context).getGoodsDetails(snapshot.data);
+            Provide.value<GetGoodsDetails>(context).getGoodsDetailsAnther(snapshot.data);
             return Stack(
               children: <Widget>[
                 SingleChildScrollView(
@@ -36,7 +36,7 @@ class DetailsPage extends StatelessWidget {
                     width: ScreenUtil().setWidth(1080),
                     child: Column(
                       children: <Widget>[
-                        DetailsTopArea(goodId),
+                        DetailsTopArea(goodsId),
                         DetailsTabBar()
                       ],
                     )

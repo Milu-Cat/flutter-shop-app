@@ -31,6 +31,7 @@ dependencies:
   flutter_easyrefresh: ^2.0.8
   provide: ^1.0.2  #状态管理组件，谷歌出品
   fluro: "^1.5.1" #Flutter本身提供了路由机制，作个人的小型项目，完全足够了。但是如果你要作企业级开发，可能就会把入口文件变得臃肿不堪。而再Flutter问世之初，就已经了企业级路由方案fluro。
+  shared_preferences: ^0.5.1 #购物车中的一项功能是持久化，就是我们关掉APP，下次进入后，还是可以显示出我们放入购物车的商品。但是这些商品不和后台进行数据交互，前台如果使用sqflite又显得太重，还要懂SQL知识。所以在购物车页面我们采用shared_preferences来进行持久化，它是简单的键-值的操作。shared_preferences是一个Flutter官方出的插件，它的主要作用就是可以key-value的形式来进行APP可客户端的持久化。
 
 # 上线不需要，只是测试阶段需要的第三方库，放在dev_dependencies里，这样上线打包不会打包进去
 dev_dependencies:
@@ -54,6 +55,7 @@ flutter:
   - data/homePage.json
   - data/category.json
   - data/goodsDateils.json
+  - data/goodsDateilsOther.json
 
   - image/home_swiper1.jpg
   - image/home_swiper2.jpg
@@ -189,6 +191,16 @@ flutter:
   - image/goods_details/goods_details23.jpg
   - image/goods_details/goods_details24.jpg
   - image/goods_details/goods_details25.jpg
+
+  - image/goods_details/another/img1.jpg
+  - image/goods_details/another/img2.jpg
+  - image/goods_details/another/img3.jpg
+  - image/goods_details/another/img4.jpg
+  - image/goods_details/another/img5.jpg
+  - image/goods_details/another/img6.jpg
+  - image/goods_details/another/img7.jpg
+  - image/goods_details/another/img8.jpg
+   
 
   - image/goods_details/comment/comment1.jpg
   - image/goods_details/comment/comment2.jpg

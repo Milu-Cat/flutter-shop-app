@@ -10,7 +10,7 @@ class DetailsTopArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return Provide<GetGoodsDetails>(
       builder: (context, child, val){
-        var goodsDetails=Provide.value<GetGoodsDetails>(context).goodsInfo;
+        var goodsDetails=Provide.value<GetGoodsDetails>(context).goodsInfoAnther;
         if(goodsDetails != null){
           return Container(
             color: Colors.white,

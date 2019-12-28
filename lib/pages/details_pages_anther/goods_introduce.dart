@@ -8,7 +8,7 @@ class GoodsIntroduce extends StatelessWidget {
   Widget build(BuildContext context) {
     return Provide<GetGoodsDetails>(
       builder: (context, child, val){
-        var goodsDetails=Provide.value<GetGoodsDetails>(context).goodsInfo;
+        var goodsDetails=Provide.value<GetGoodsDetails>(context).goodsInfoAnther;
         if(goodsDetails != null){
           return Container(
             padding: EdgeInsets.only(left: 10, right: 10),
@@ -23,24 +23,7 @@ class GoodsIntroduce extends StatelessWidget {
                 _goodsImage(goodsDetails['goodInfo']['introduceImage4']),
                  _goodsImage(goodsDetails['goodInfo']['introduceImage5']),
                 _goodsImage(goodsDetails['goodInfo']['introduceImage6']),
-                _goodsImage(goodsDetails['goodInfo']['introduceImage7']),
-                _goodsImage(goodsDetails['goodInfo']['introduceImage8']),
-                 _goodsImage(goodsDetails['goodInfo']['introduceImage9']),
-                _goodsImage(goodsDetails['goodInfo']['introduceImage10']),
-                _goodsImage(goodsDetails['goodInfo']['introduceImage11']),
-                _goodsImage(goodsDetails['goodInfo']['introduceImage12']),
-                 _goodsImage(goodsDetails['goodInfo']['introduceImage13']),
-                _goodsImage(goodsDetails['goodInfo']['introduceImage14']),
-                _goodsImage(goodsDetails['goodInfo']['introduceImage15']),
-                _goodsImage(goodsDetails['goodInfo']['introduceImage16']),
-                 _goodsImage(goodsDetails['goodInfo']['introduceImage17']),
-                _goodsImage(goodsDetails['goodInfo']['introduceImage18']),
-                _goodsImage(goodsDetails['goodInfo']['introduceImage19']),
-                _goodsImage(goodsDetails['goodInfo']['introduceImage20']),
-                _goodsImage(goodsDetails['goodInfo']['introduceImage21']),
-                _goodsImage(goodsDetails['goodInfo']['introduceImage22']),
-                _goodsImage(goodsDetails['goodInfo']['introduceImage23']),
-                _goodsImage(goodsDetails['goodInfo']['introduceImage24']),
+                _goodsImage(goodsDetails['goodInfo']['introduceImage7'])
               ],
             ),
           );
