@@ -143,13 +143,13 @@ class _LeftCategoryListState extends State<LeftCategoryList> {
           decoration: BoxDecoration(
             border: Border(
               left: BorderSide(
-                width: ScreenUtil().setWidth(10), color: listIndex == index ? Colors.pink: Color.fromRGBO(247, 247, 247, 1)
+                width: ScreenUtil().setWidth(10), color: listIndex == index ? Colors.redAccent[700]: Color.fromRGBO(247, 247, 247, 1)
               )
             )
           ),
           child: Center(
             child: Text(widget.leftList[index]['mallCategoryName'], 
-            style: listIndex == index ? TextStyle(fontSize: ScreenUtil().setSp(33), color: Colors.pink, fontWeight: FontWeight.w600) : TextStyle(fontSize: ScreenUtil().setSp(30))),
+            style: listIndex == index ? TextStyle(fontSize: ScreenUtil().setSp(33), color: Colors.redAccent[700], fontWeight: FontWeight.w600) : TextStyle(fontSize: ScreenUtil().setSp(30))),
           ),
         )
       ),

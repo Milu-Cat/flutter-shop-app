@@ -50,22 +50,10 @@ class DetailsTopArea extends StatelessWidget {
     );
   } 
 
-  // 商品名称
-  Widget _goodsName(name){
-    return Container(
-      padding: EdgeInsets.only(left: 10, right: 10),
-      width: ScreenUtil().setWidth(1080),
-      child: Text(
-        name,
-        maxLines: 2,
-        style: TextStyle(fontSize: ScreenUtil().setSp(40),color: Colors.black, fontWeight: FontWeight.bold),
-      ),
-    );
-  }
-
   // 商品价格
   Widget _goodsPrice(newPrice, oldPrice){
     return Container(
+      color: Colors.white,
       padding: EdgeInsets.all(10),
       width: ScreenUtil().setWidth(1080),
       child: Row(
@@ -73,7 +61,7 @@ class DetailsTopArea extends StatelessWidget {
           Container(
             child: Text(
               '￥$newPrice',
-              style: TextStyle(color: Colors.pink, fontSize: ScreenUtil().setSp(40)),
+              style: TextStyle(color: Colors.redAccent[700], fontSize: ScreenUtil().setSp(40)),
             ),
           ),
           Container(
@@ -85,6 +73,20 @@ class DetailsTopArea extends StatelessWidget {
           )
         ],
       )
+    );
+  }
+
+  // 商品名称
+  Widget _goodsName(name){
+    return Container(
+      color: Colors.white,
+      padding: EdgeInsets.only(left: 10, right: 10, bottom: 20),
+      width: ScreenUtil().setWidth(1080),
+      child: Text(
+        name,
+        maxLines: 2,
+        style: TextStyle(fontSize: ScreenUtil().setSp(40),color: Colors.black, fontWeight: FontWeight.bold),
+      ),
     );
   }
 }

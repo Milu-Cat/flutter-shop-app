@@ -47,6 +47,7 @@ class GoodInfo {
   String introduceImage22;
   String introduceImage23;
   String introduceImage24;
+  List<Comment> comment;
 
   GoodInfo(
       {this.image,
@@ -76,7 +77,8 @@ class GoodInfo {
       this.introduceImage21,
       this.introduceImage22,
       this.introduceImage23,
-      this.introduceImage24});
+      this.introduceImage24,
+      this.comment});
 
   GoodInfo.fromJson(Map<String, dynamic> json) {
     image = json['image'];
@@ -107,6 +109,12 @@ class GoodInfo {
     introduceImage22 = json['introduceImage22'];
     introduceImage23 = json['introduceImage23'];
     introduceImage24 = json['introduceImage24'];
+    if (json['comment'] != null) {
+      comment = new List<Comment>();
+      json['comment'].forEach((v) {
+        comment.add(new Comment.fromJson(v));
+      });
+    }
   }
 
   Map<String, dynamic> toJson() {
@@ -139,6 +147,34 @@ class GoodInfo {
     data['introduceImage22'] = this.introduceImage22;
     data['introduceImage23'] = this.introduceImage23;
     data['introduceImage24'] = this.introduceImage24;
+    if (this.comment != null) {
+      data['comment'] = this.comment.map((v) => v.toJson()).toList();
+    }
+    return data;
+  }
+}
+
+class Comment {
+  String image;
+  String content;
+  String time;
+  String name;
+
+  Comment({this.image, this.content, this.time, this.name});
+
+  Comment.fromJson(Map<String, dynamic> json) {
+    image = json['image'];
+    content = json['content'];
+    time = json['time'];
+    name = json['name'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['image'] = this.image;
+    data['content'] = this.content;
+    data['time'] = this.time;
+    data['name'] = this.name;
     return data;
   }
 }

@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: Application.router.generator,
         // 引入路由静态文件 --end
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(primaryColor: Colors.pink,splashColor: Colors.transparent),
+        theme: ThemeData(primaryColor: Colors.redAccent[700],splashColor: Colors.transparent),
         home: IndexPage()
       ),
     );

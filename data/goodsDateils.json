@@ -27,6 +27,62 @@
         "introduceImage21": "image/goods_details/goods_details22.jpg",
         "introduceImage22": "image/goods_details/goods_details23.jpg",
         "introduceImage23": "image/goods_details/goods_details24.jpg",
-        "introduceImage24": "image/goods_details/goods_details25.jpg"
+        "introduceImage24": "image/goods_details/goods_details25.jpg",
+        "comment": [
+            {
+                "image": "image/goods_details/comment/comment1.jpg",
+                "content": "外形外观：橙色绝对惊艳，手感也好，拿在手里别人一眼就知道是什么手机，开车放支架上别人还盯着手机看，就是年龄大的老同志不太能接受这个颜色。",
+                "time": "12月27日",
+                "name": "a2***2d2"
+            },
+            {
+                "image": "image/goods_details/comment/comment2.jpg",
+                "content": "外形外观：屏幕很大，虽然用了1080P的屏幕，不过现实效果依然很清晰。屏幕音效：音质不错，声音比较大。拍照效果：电影镜头的加入很nice，拍照特别清晰。前置摄像头美颜效果很出众。",
+                "time": "12月27日",
+                "name": "lcz***s32"
+            },
+            {
+                "image": "image/goods_details/comment/comment3.jpg",
+                "content": "首先充电非常快，屏幕清晰，艳丽。操作系统顺畅，人脸识别特别灵敏，拍照效果更是好上加好，关键还可以拍电影！瀑布屏外观颇具亮点，6.53英寸OLED屏幕有别于其他水滴屏或者刘海屏手机，拿在手里流露出贵族气息",
+                "time": "12月26日",
+                "name": "嘟嘟"
+            },
+            {
+                "image": "image/goods_details/comment/comment4.jpg",
+                "content": "华为mate30 pro 5G版本应该是目前为止我最满意的5G手机。双11入手，六**九的价格。上手使用了几天才来评论的。说实话手感各方面都不错，曲面的手机侧面初期使用的话不是特别适应，后续应该慢慢有所改善。",
+                "time": "12月26日",
+                "name": "_dd***213"
+            },
+            {
+                "image": "image/goods_details/comment/comment5.jpg",
+                "content": "双十一又爱又恨的选择，爱的是双十一打折很划算，恨的是这是首款5G旗舰机型，还不打折只是没什么中间价，好在平时京豆累计和红包活动参加频繁，8最终6000多出头拿下，算是很值得了。",
+                "time": "12月26日",
+                "name": "麦兜呀"
+            },
+            {
+                "image": "image/goods_details/comment/comment6.jpg",
+                "content": "外形外观：华为mate 30 Pro外观大气上档次莱卡四色，电影镜头显得格外的漂亮，手感也是非常非常的棒细腻而有光泽。￼屏幕音效：屏幕的音效显得十分的庄重，并且有环绕立体声感觉棒棒的听了几首音乐效果也是非常得好音质特别清晰",
+                "time": "12月25日",
+                "name": "wfg***e43"
+            },
+            {
+                "image": "image/goods_details/comment/comment7.jpg",
+                "content": "双十一又爱又恨的选择，爱的是双十一打折很划算，恨的是这是首款5G旗舰机型，还不打折只是没什么中间价，好在平时京豆累计和红包活动参加频繁，8最终6000多出头拿下，算是很值得了。",
+                "time": "12月25日",
+                "name": "geg***23f"
+            },
+            {
+                "image": "image/goods_details/comment/comment8.jpg",
+                "content": "首先充电非常快，屏幕清晰，艳丽。操作系统顺畅，人脸识别特别灵敏，拍照效果更是好上加好，关键还可以拍电影！瀑布屏外观颇具亮点，6.53英寸OLED屏幕有别于其他水滴屏或者刘海屏手机，拿在手里流露出贵族气息",
+                "time": "12月25日",
+                "name": "wwf**233"
+            },
+            {
+                "image": "image/goods_details/comment/comment9.jpg",
+                "content": "外形外观：橙色绝对惊艳，手感也好，拿在手里别人一眼就知道是什么手机，开车放支架上别人还盯着手机看，就是年龄大的老同志不太能接受这个颜色。",
+                "time": "12月25日",
+                "name": "gth***126"
+            }
+        ]
     }
 }

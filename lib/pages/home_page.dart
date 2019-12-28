@@ -171,7 +171,7 @@ class TopNavigator extends StatelessWidget {
     return Container(
       // color: Colors.grey,
       height: ScreenUtil().setHeight(390),
-      padding: const EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 0.0),
+      padding: const EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 20.0),
       child: GridView.count(
         crossAxisCount: 5,
         // padding: EdgeInsets.all(5.0),
@@ -187,16 +187,20 @@ class TopNavigator extends StatelessWidget {
       onTap: (){
         Application.router.navigateTo(context, "/goods-list?id='hotOne'"); // 跳到商品列表页
       },
-      child: Column(children: <Widget>[
-        Container(
-          // color: Colors.green,
-          alignment: Alignment.center,
-          child: ClipOval(
-            child:Image.asset(item['image'], width:ScreenUtil().setWidth(95)),
+      child: Container(
+        // color: Colors.green,
+        height: ScreenUtil().setHeight(100),
+        child: Column(children: <Widget>[
+          Container(
+            alignment: Alignment.center,
+            child: ClipOval(
+              child:Image.asset(item['image'], width:ScreenUtil().setWidth(95)),
+            ),
           ),
-        ),
-        Text(item['topTitle'],style: TextStyle(fontSize: 11.0),)
-      ],),
+          Text(item['topTitle'],style: TextStyle(fontSize: 11.0),)
+        ],
+      )
+      ),
     );
   }
 }
@@ -278,7 +282,7 @@ class Recommed extends StatelessWidget {
           bottom: BorderSide(width: 0.5, color: Colors.black12)
         )
       ),
-      child: Text('商品推荐', style: TextStyle(color: Colors.pink),),
+      child: Text('商品推荐', style: TextStyle(color: Colors.redAccent[700]),),
     );
   }
 
@@ -332,7 +336,6 @@ class Recommed extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: Colors.pink,
       height: ScreenUtil().setHeight(425),
       margin: EdgeInsets.only(top: 10.0),
       child: Column(
@@ -457,7 +460,7 @@ class HotGoods extends StatelessWidget {
           bottom: BorderSide(width: 0.5, color: Colors.black12),
         )
       ),
-      child: Text('火爆专区', style: TextStyle(color: Colors.pink)),
+      child: Text('火爆专区', style: TextStyle(color: Colors.redAccent[700])),
     );
   }
 

@@ -7,6 +7,8 @@ import '../provide/goods_details.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import './details_pages/details_top_area.dart';
 import './details_pages/goods_introduce.dart';
+import './details_pages/details_tabbar.dart';
+import './details_pages/details_bottom.dart';
 
 class DetailsPage extends StatelessWidget {
     final String goodsId;
@@ -29,21 +31,27 @@ class DetailsPage extends StatelessWidget {
           if(snapshot.hasData){
             // print(snapshot.data)
             Provide.value<GetGoodsDetails>(context).getGoodsDetails(snapshot.data);
-            // var goodsDetails=Provide.value<GetGoodsDetails>(context).goodsInfo;
-            // String content = goodsDetails.goodInfo.image;
-            return SingleChildScrollView(
-                child: Container(
-                width: ScreenUtil().setWidth(1080),
-                // height: ScreenUtil().setHeight(10000),
-                child: Column(
-                  children: <Widget>[
-                    DetailsTopArea(),
-                    GoodsIntroduce()
-                    // Text(content)
-                  ],
+            return Stack(
+              children: <Widget>[
+                SingleChildScrollView(
+                  child: Container(
+                    width: ScreenUtil().setWidth(1080),
+                    child: Column(
+                      children: <Widget>[
+                        DetailsTopArea(),
+                        DetailsTabBar()
+                      ],
+                    )
+                  ),
+                ),
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  child: DetailsBottom(),
                 )
-              ),
+              ],
             );
+             
           }else{
             return Center(
               child: Text('加载中........'),
