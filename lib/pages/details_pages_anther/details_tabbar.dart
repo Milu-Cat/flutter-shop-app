@@ -4,7 +4,7 @@ import '../../provide/goods_details.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import './tab_web.dart';
 
-class DetailsTabBar extends StatelessWidget {
+class DetailsTabBarAnther extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Provide<GetGoodsDetails>(
@@ -22,7 +22,7 @@ class DetailsTabBar extends StatelessWidget {
                   _tab(context, isRight, '评论')
                 ],
               ),
-              TabWeb()
+              TabWebAnther()
             ],
           )
         );

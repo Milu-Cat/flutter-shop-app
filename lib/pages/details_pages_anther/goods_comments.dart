@@ -3,7 +3,7 @@ import 'package:provide/provide.dart';
 import '../../provide/goods_details.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class GoodsComments extends StatelessWidget {
+class GoodsCommentsAnther extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Provide<GetGoodsDetails>(

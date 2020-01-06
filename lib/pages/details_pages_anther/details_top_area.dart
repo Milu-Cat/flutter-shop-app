@@ -3,9 +3,9 @@ import 'package:provide/provide.dart';
 import '../../provide/goods_details.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class DetailsTopArea extends StatelessWidget {
+class DetailsTopAreaAnther extends StatelessWidget {
   final String goodId;
-  DetailsTopArea(this.goodId);
+  DetailsTopAreaAnther(this.goodId);
   @override
   Widget build(BuildContext context) {
     return Provide<GetGoodsDetails>(

@@ -36,8 +36,8 @@ class DetailsPageAnther extends StatelessWidget {
                     width: ScreenUtil().setWidth(1080),
                     child: Column(
                       children: <Widget>[
-                        DetailsTopArea(goodsId),
-                        DetailsTabBar()
+                        DetailsTopAreaAnther(goodsId),
+                        DetailsTabBarAnther()
                       ],
                     )
                   ),
@@ -45,7 +45,7 @@ class DetailsPageAnther extends StatelessWidget {
                 Positioned(
                   bottom: 0,
                   left: 0,
-                  child: DetailsBottom(),
+                  child: DetailsBottomAnther(),
                 )
               ],
             );

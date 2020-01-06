@@ -5,7 +5,7 @@ import '../../provide/goods_details.dart';
 import './goods_introduce.dart';
 import './goods_comments.dart';
 
-class TabWeb extends StatelessWidget {
+class TabWebAnther extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Provide<GetGoodsDetails>(
@@ -13,9 +13,9 @@ class TabWeb extends StatelessWidget {
         var isLeft = Provide.value<GetGoodsDetails>(context).isLeft;
         // var isRight = Provide.value<GetGoodsDetails>(context).isRight;
         if(isLeft){
-          return GoodsIntroduce();
+          return GoodsIntroduceAnther();
         }else{
-          return GoodsComments();
+          return GoodsCommentsAnther();
         }
       });
   }

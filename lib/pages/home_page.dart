@@ -3,7 +3,7 @@ import 'package:flutter_swiper/flutter_swiper.dart'; // 需要下载flutter_swip
 // import '../service/service_method.dart';  // 使用http时
 import 'dart:convert' show json; // 解析json的依赖
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 import 'dart:ui';
 import 'package:flutter_easyrefresh/easy_refresh.dart'; // 上拉获取新的数据插件
 import '../router/application.dart';
@@ -66,8 +66,8 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
             List<Map> swiper = (data['data']['slides'] as List).cast();
             List<Map> navigatorList = (data['data']['topNavigator'] as List).cast();
             String adPicture = data['data']['adPicture']['image'];
-            String adTell = data['data']['adTell']['image'];
-            String leaderPhone = data['data']['adTell']['leaderPhone'];
+            // String adTell = data['data']['adTell']['image'];
+            // String leaderPhone = data['data']['adTell']['leaderPhone'];
             List<Map> recommendList = (data['data']['recommend'] as List).cast();
             String floorImg = data['data']['floorTitle'];
             List<Map> floorContentList = (data['data']['floor'] as List).cast();
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
                     TopNavigator(navigatorList: navigatorList),
                     AdBanner(adPicture:adPicture),
                     Recommed(recommedList: recommendList,),
-                    AdTell(adTell: adTell, leaderPhone: leaderPhone),
+                    // AdTell(adTell: adTell, leaderPhone: leaderPhone),
                     FloorTitle(floorImg: floorImg),
                     FloorContent(floorContentList: floorContentList,),
                     HotGoods(hotGoddsList: hotGoddsList,)
@@ -169,12 +169,10 @@ class TopNavigator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: Colors.grey,
-      height: ScreenUtil().setHeight(390),
-      padding: const EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 20.0),
+      height: ScreenUtil().setHeight(450),
+      padding: const EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 0),
       child: GridView.count(
         crossAxisCount: 5,
-        // padding: EdgeInsets.all(5.0),
         children: navigatorList.map((item){
           return _gridViewItemUi(context, item);
         }).toList()
@@ -188,18 +186,16 @@ class TopNavigator extends StatelessWidget {
         Application.router.navigateTo(context, "/goods-list?id='one'"); // 跳到商品列表页
       },
       child: Container(
-        // color: Colors.green,
-        height: ScreenUtil().setHeight(100),
-        child: Column(children: <Widget>[
-          Container(
-            alignment: Alignment.center,
-            child: ClipOval(
-              child:Image.asset(item['image'], width:ScreenUtil().setWidth(95)),
+        child: Column(
+          children: <Widget>[
+            Container(
+              child: ClipOval(
+                child:Image.asset(item['image'], width:ScreenUtil().setWidth(95)),
+              ),
             ),
-          ),
-          Text(item['topTitle'],style: TextStyle(fontSize: 11.0),)
-        ],
-      )
+            Text(item['topTitle'],style: TextStyle(fontSize: 11.0),)
+          ],
+        )
       ),
     );
   }
@@ -231,37 +227,37 @@ class AdBanner extends StatelessWidget {
 
 
 // 一键打店长电话
-class AdTell extends StatelessWidget {
+// class AdTell extends StatelessWidget {
 
-  final String adTell;  // 电话图片
-  final String leaderPhone; // 店长电话
-  AdTell({this.adTell, this.leaderPhone});
+//   final String adTell;  // 电话图片
+//   final String leaderPhone; // 店长电话
+//   AdTell({this.adTell, this.leaderPhone});
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      padding: const EdgeInsets.fromLTRB(10.0, 10.0, 20.0, 10.0),
-      height: ScreenUtil().setHeight(240.0),
-      width: ScreenUtil().setWidth(1080.0),
-      // color: Colors.green,
-      child: InkWell(
-        onTap: _launchUrl,
-        child: Image.asset(adTell), 
-      )
-    );
-  }
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       color: Colors.white,
+//       padding: const EdgeInsets.fromLTRB(10.0, 10.0, 20.0, 10.0),
+//       height: ScreenUtil().setHeight(240.0),
+//       width: ScreenUtil().setWidth(1080.0),
+//       // color: Colors.green,
+//       child: InkWell(
+//         onTap: _launchUrl,
+//         child: Image.asset(adTell), 
+//       )
+//     );
+//   }
 
-  void _launchUrl() async{
-    String url = 'tel:' + leaderPhone;
-    if(await canLaunch(url)){
-      await launch(url);
-      print('正在打电话');
-    }else {
-      throw 'url不能进行访问！';
-    }
-  }
-}
+//   void _launchUrl() async{
+//     String url = 'tel:' + leaderPhone;
+//     if(await canLaunch(url)){
+//       await launch(url);
+//       print('正在打电话');
+//     }else {
+//       throw 'url不能进行访问！';
+//     }
+//   }
+// }
 
 
 
