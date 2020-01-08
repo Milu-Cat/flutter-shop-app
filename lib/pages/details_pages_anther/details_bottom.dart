@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:provide/provide.dart';
 import '../../provide/cart.dart';
+import '../../provide/currentIndex.dart';
 
 class DetailsBottomAnther  extends StatelessWidget {
   @override
@@ -33,26 +34,52 @@ class DetailsBottomAnther  extends StatelessWidget {
               ),
             ),
           ),
-          InkWell(
-            onTap: (){},
-            child: Container(
-              decoration: BoxDecoration(
-                border: Border(
-                  left: BorderSide(
-                    width: 0.5,
-                    color: Colors.black12
-                  )
+          // 去购物车
+          Stack(
+             children: <Widget>[
+               InkWell(
+                  onTap: (){
+                      Provide.value<CurrentIndexProvide>(context).changeIndex(2);
+                      Navigator.pop(context);
+                  },
+                  child: Container(
+                      width: ScreenUtil().setWidth(200) ,
+                      alignment: Alignment.center,
+                      child:Icon(
+                            Icons.shopping_cart,
+                            size: 26,
+                            color: Colors.redAccent[700],
+                          ), 
+                    ) ,
+                ),
+                // 在详情页显示购物车商品数量
+                Provide<CartProvide>(
+                  builder: (context,child,val){
+                    int  goodsCount = Provide.value<CartProvide>(context).allGoodsCount;
+                    return  Positioned(
+                        top:0,
+                        right: 10,
+                        child: Container(
+                          padding:EdgeInsets.fromLTRB(6, 3, 6, 3),
+                          decoration: BoxDecoration(
+                            color:Colors.redAccent[700],
+                            border:Border.all(width: 2,color: Colors.white),
+                            borderRadius: BorderRadius.circular(12.0)
+                          ),
+                          child: Text(
+                            '$goodsCount',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: ScreenUtil().setSp(22)
+                            ),
+                          ),
+                        ),
+                      ) ;
+                  },
                 )
-              ),
-              width: ScreenUtil().setWidth(200),
-              alignment: Alignment.center,
-              child: Icon(
-                Icons.shopping_cart,
-                size: 26,
-                color: Colors.redAccent[700],
-              ),
-            ),
-          ),
+
+             ],
+           ),
           InkWell(
             onTap: () async{
               await Provide.value<CartProvide>(context).save('two','OnitsukaTiger鬼冢虎2018中性MEXICO 66MEXICO 1183A212-008 1183A212-107 37',1,589.0,'image/goods_details/another/img1.jpg');

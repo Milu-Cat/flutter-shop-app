@@ -45,7 +45,7 @@ class DetailsPage extends StatelessWidget {
                 Positioned(
                   bottom: 0,
                   left: 0,
-                  child: DetailsBottom(),
+                  child: DetailsBottom(goodId),
                 )
               ],
             );

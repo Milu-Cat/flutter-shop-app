@@ -4,6 +4,7 @@ import 'package:provide/provide.dart';  //把状态管理引入到main.dart中
 import './provide/category.dart';
 import './provide/goods_details.dart';
 import './provide/cart.dart';
+import './provide/currentIndex.dart';
 import 'package:fluro/fluro.dart';
 import './router/application.dart';
 import './router/routes.dart';
@@ -12,12 +13,14 @@ void main(){
   var category =ChangeRightList();
   var goodsDetails =GetGoodsDetails();
   var cartProvide =CartProvide();
+  var currentIndex =CurrentIndexProvide();
   var providers  =Providers();
 
   providers
     ..provide(Provider<ChangeRightList>.value(category))
     ..provide(Provider<GetGoodsDetails>.value(goodsDetails))
-    ..provide(Provider<CartProvide>.value(cartProvide));
+    ..provide(Provider<CartProvide>.value(cartProvide))
+    ..provide(Provider<CurrentIndexProvide>.value(currentIndex));
   runApp(ProviderNode(child:MyApp(),providers:providers));
 }
 

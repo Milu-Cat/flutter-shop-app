@@ -221,7 +221,7 @@ class _RightListState extends State<RightList> {
           margin: EdgeInsets.only(bottom: 5.0 ),
           child: InkWell(
             onTap: (){
-              Application.router.navigateTo(context, "/details?id='One'");  // 跳到商品详情页
+              Application.router.navigateTo(context, "/details?id=one");  // 跳到商品详情页
             },
             child: Center(
               child: Column(

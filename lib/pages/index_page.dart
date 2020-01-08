@@ -5,6 +5,8 @@ import 'cart_page.dart';
 import 'member_page.dart';
 import 'category_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';  // 需要下载flutter_screenutil最新版
+import '../provide/currentIndex.dart';
+import 'package:provide/provide.dart';
 
 class IndexPage extends StatefulWidget {
   @override
@@ -69,28 +71,35 @@ class _IndexPageState extends State<IndexPage> {
     print('设备高度:${ScreenUtil.screenHeight}');
     print('设备像素密度:${ScreenUtil.pixelRatio}');
 
-    return Scaffold(
-      backgroundColor: Color.fromRGBO(244, 245, 245, 1.0),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: currentIndex, // 当前页索引
-        items: bottomTabs, // 所有的底部导航栏的按钮
-        onTap: (index){
-          setState(() {
-            currentIndex = index;
-            currentPage = tabBodies[currentIndex];
-          });
-        },
-      ),
+    // int currentIndex= Provide.value<CurrentIndexProvide>(context).currentIndex;
+    return Provide<CurrentIndexProvide>(
+      builder: (context,child,val){
+        int currentIndex= Provide.value<CurrentIndexProvide>(context).currentIndex;
+        return     
+        Scaffold(
+          backgroundColor: Color.fromRGBO(244, 245, 245, 1.0),
+          bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            currentIndex: currentIndex, // 当前页索引
+            items: bottomTabs, // 所有的底部导航栏的按钮
+            onTap: (index){
+              // setState(() {
+              //   currentIndex = index;
+              //   currentPage = tabBodies[currentIndex];
+              // });
+              Provide.value<CurrentIndexProvide>(context).changeIndex(index);
+            },
+          ),
 
-      // body: currentPage // 未实现保存页面状态之前代码
+          // body: currentPage // 未实现保存页面状态之前代码
 
-      // 保持页面状态加入代码--start
-      body: IndexedStack(  //IndexedStack 作用是保持页面状态
-        index: currentIndex,
-        children: tabBodies
-      )
-      // 保持页面状态加入代码--end
-    );
+          // 保持页面状态加入代码--start
+          body: IndexedStack(  //IndexedStack 作用是保持页面状态
+            index: currentIndex,
+            children: tabBodies
+          )
+          // 保持页面状态加入代码--end
+        );
+    });
   }
 }

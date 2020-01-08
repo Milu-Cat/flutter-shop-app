@@ -145,7 +145,7 @@ class SwiperDiy extends StatelessWidget {
         itemBuilder: (BuildContext context, int index){
           return InkWell(
             onTap: (){
-              Application.router.navigateTo(context, "/details?id='one'");  // 跳到商品详情页
+              Application.router.navigateTo(context, "/details?id=one");  // 跳到商品详情页
             },
             child: Image.asset("${swiperDataList[index]['image']}", fit: BoxFit.fill),
           );
@@ -169,8 +169,8 @@ class TopNavigator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ScreenUtil().setHeight(450),
-      padding: const EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 0),
+      height: ScreenUtil().setHeight(385),
+      padding: const EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 0),
       child: GridView.count(
         crossAxisCount: 5,
         children: navigatorList.map((item){
@@ -183,7 +183,7 @@ class TopNavigator extends StatelessWidget {
     Widget _gridViewItemUi(BuildContext context, item){
     return InkWell(
       onTap: (){
-        Application.router.navigateTo(context, "/goods-list?id='one'"); // 跳到商品列表页
+        Application.router.navigateTo(context, "/goods-list?id=one"); // 跳到商品列表页
       },
       child: Container(
         child: Column(
@@ -216,7 +216,7 @@ class AdBanner extends StatelessWidget {
       // color: Colors.green,
       child: InkWell(
         onTap: (){
-          Application.router.navigateTo(context, "/goods-list?id='one'"); // 跳到商品列表页
+          Application.router.navigateTo(context, "/goods-list?id=one"); // 跳到商品列表页
         },
         child: Image.asset(adPicture, fit: BoxFit.cover),
       )
@@ -224,42 +224,6 @@ class AdBanner extends StatelessWidget {
     );
   }
 }
-
-
-// 一键打店长电话
-// class AdTell extends StatelessWidget {
-
-//   final String adTell;  // 电话图片
-//   final String leaderPhone; // 店长电话
-//   AdTell({this.adTell, this.leaderPhone});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       color: Colors.white,
-//       padding: const EdgeInsets.fromLTRB(10.0, 10.0, 20.0, 10.0),
-//       height: ScreenUtil().setHeight(240.0),
-//       width: ScreenUtil().setWidth(1080.0),
-//       // color: Colors.green,
-//       child: InkWell(
-//         onTap: _launchUrl,
-//         child: Image.asset(adTell), 
-//       )
-//     );
-//   }
-
-//   void _launchUrl() async{
-//     String url = 'tel:' + leaderPhone;
-//     if(await canLaunch(url)){
-//       await launch(url);
-//       print('正在打电话');
-//     }else {
-//       throw 'url不能进行访问！';
-//     }
-//   }
-// }
-
-
 
 // 商品推荐
 class Recommed extends StatelessWidget {
@@ -286,7 +250,7 @@ class Recommed extends StatelessWidget {
   Widget _itemGoods(context,index){
     return InkWell(
       onTap: (){
-        Application.router.navigateTo(context, "/details-anther?id='two'");  // 跳到商品详情页
+        Application.router.navigateTo(context, "/details-anther?id=two");  // 跳到商品详情页
       },
       child: Container(
         height: ScreenUtil().setHeight(330),
@@ -364,7 +328,7 @@ class FloorTitle extends StatelessWidget {
       // padding: EdgeInsets.all(8.0),
       child: InkWell(
         onTap: (){
-          Application.router.navigateTo(context, "/goods-list?id='one'"); // 跳到商品列表页
+          Application.router.navigateTo(context, "/goods-list?id=one"); // 跳到商品列表页
         },
         child: Image.asset(floorImg),
       )
@@ -422,7 +386,7 @@ class FloorContent extends StatelessWidget {
       height: ScreenUtil().setHeight(height),
       child: InkWell(
         onTap: (){  
-          Application.router.navigateTo(context, "/goods-list?id='one'"); // 跳到商品列表页
+          Application.router.navigateTo(context, "/goods-list?id=one"); // 跳到商品列表页
         },
         child: Image.asset(goods['image'], fit: BoxFit.cover),
       ),
@@ -466,7 +430,7 @@ class HotGoods extends StatelessWidget {
       List<Widget> listWidget = hotGoddsList.map((val){
         return InkWell(
           onTap: (){
-             Application.router.navigateTo(context, "/details?id='one'");  // 跳到商品详情页
+             Application.router.navigateTo(context, "/details?id=one");  // 跳到商品详情页
           },
             child: Container(
               width: ScreenUtil().setWidth(500),
