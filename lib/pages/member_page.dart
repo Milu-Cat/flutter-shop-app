@@ -232,7 +232,6 @@ class MemberPage extends StatelessWidget {
         padding: EdgeInsets.all(10.0),
         alignment: Alignment.center,
         width: ScreenUtil().setWidth(1020),
-        // height: ScreenUtil().setHeight(1),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(5.0)
@@ -254,10 +253,6 @@ class MemberPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text('我的工具', style: TextStyle(fontSize: ScreenUtil().setSp(33)),),
-                // InkWell(
-                //   onTap: (){},
-                //   child: Text('全部 >', style: TextStyle(fontSize: ScreenUtil().setSp(25)),),
-                // )
               ],
             ),
           ),
