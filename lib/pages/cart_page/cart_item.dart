@@ -4,6 +4,7 @@ import '../../model/cart_info_model.dart';
 import './cart_count.dart';
 import 'package:provide/provide.dart';
 import '../../provide/cart.dart';
+import '../../router/application.dart';
 
 class CartItem extends StatelessWidget {
   final CartInfoModel item;
@@ -21,11 +22,11 @@ class CartItem extends StatelessWidget {
       child: Row(
         children: <Widget>[
           _cartCheckBt(context, item),
-          _cartImage(item),
+          _cartImage(context, item),
           Container(
             child: Column(
               children: <Widget>[
-                _cartGoodsName(item),
+                _cartGoodsName(context, item),
                 _cartPrice(context, item)
               ],
             ),
@@ -50,22 +51,40 @@ class CartItem extends StatelessWidget {
   }
 
   // 商品图片
-  Widget _cartImage(item){
-    return Container(
-      width: ScreenUtil().setWidth(200.0),
-      child: Image.asset(item.images, width: ScreenUtil().setWidth(300), height: ScreenUtil().setHeight(300),),
+  Widget _cartImage(context, item){
+    return InkWell(
+      onTap: (){
+        if(item.goodsId == 'one'){
+          Application.router.navigateTo(context, "/details?id=one"); 
+        }else{
+          Application.router.navigateTo(context, "/details-anther?id=two");
+        }
+      },
+      child: Container(
+        width: ScreenUtil().setWidth(200.0),
+        child: Image.asset(item.images, width: ScreenUtil().setWidth(300), height: ScreenUtil().setHeight(300),),
+      ),
     );
   }
   
   // 商品名称
-  Widget _cartGoodsName(item){
+  Widget _cartGoodsName(context, item){
     return Container(
       // color: Colors.green,
       padding: EdgeInsets.only(left: 20),
       width: ScreenUtil().setWidth(750.0),
       child: Column(
         children: <Widget>[
-          Text(item.goodsName, maxLines: 2, overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: ScreenUtil().setSp(30)),),
+          InkWell(
+            onTap: (){
+              if(item.goodsId == 'one'){
+                Application.router.navigateTo(context, "/details?id=one"); 
+              }else{
+                Application.router.navigateTo(context, "/details-anther?id=two");
+              }
+            },
+            child: Text(item.goodsName, maxLines: 2, overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: ScreenUtil().setSp(30)),),
+          ),
           CartCount(item)
         ],
       )

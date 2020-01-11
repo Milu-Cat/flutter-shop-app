@@ -212,6 +212,25 @@ flutter:
   - image/goods_details/comment/comment8.jpg
   - image/goods_details/comment/comment9.jpg
   
+  - image/admin_img.jpg
+
+  - image/merber/guanggao.png
+  - image/merber/shouye.png
+  - image/merber/xiaoxi.png
+  - image/merber/shoucang.png
+  - image/merber/guanzhu.png
+  - image/merber/zuji.png
+  - image/merber/daifu.jpg
+  - image/merber/daifa.jpg
+  - image/merber/daishou.jpg
+  - image/merber/pingjia.jpg
+  - image/merber/shouhou.jpg
+
+  - image/merber/qiandao.jpg
+  - image/merber/huanbao.jpg
+  - image/merber/kefu.jpg
+  - image/merber/daren.jpg
+  - image/merber/shouhuo.jpg
 
   
   #  - images/a_dot_ham.jpeg

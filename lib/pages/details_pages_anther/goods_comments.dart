@@ -8,7 +8,7 @@ class GoodsCommentsAnther extends StatelessWidget {
   Widget build(BuildContext context) {
     return Provide<GetGoodsDetails>(
       builder: (context, child, val){
-        List<dynamic> goodsDetails=(Provide.value<GetGoodsDetails>(context).goodsInfo['goodInfo']['comment'] as List).cast();
+        List<dynamic> goodsDetails=(Provide.value<GetGoodsDetails>(context).goodsInfoAnther['goodInfo']['comment'] as List).cast();
         if(goodsDetails != null){
           return Container(
             child: Column(

@@ -51,25 +51,6 @@ class GoodsIntroduce extends StatelessWidget {
     );
   }
   
-  // 商品介绍标题
-  // Widget _goodsIntroduceItem(){
-  //   return Container(
-  //     // color: Colors.white,
-  //     alignment: Alignment.centerLeft,
-  //     padding: EdgeInsets.fromLTRB(10.0, 5.0, 0.0, 5.0),
-  //     // width: ScreenUtil().setWidth(1080),
-  //     // height: ScreenUtil().setHeight(50),
-  //     decoration: BoxDecoration(
-  //       border: Border(
-  //         bottom: BorderSide(
-  //           width: 0.5,
-  //           color: Colors.black12
-  //         )
-  //       )
-  //     ),
-  //     child: Text('商品介绍', style: TextStyle(color: Colors.redAccent[700])),
-  //   );
-  // }
   // 商品介绍图片
   Widget _goodsImage(url){
     return Container(
