@@ -9,7 +9,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="道简"
-        android:icon="@mipmap/ic_logo">
+        android:icon="@mipmap/ic_logos">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
