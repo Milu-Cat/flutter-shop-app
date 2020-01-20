@@ -35,7 +35,7 @@ class MyOrder extends StatelessWidget {
                 Text('我的订单', style: TextStyle(fontSize: ScreenUtil().setSp(33)),),
                 InkWell(
                   onTap: (){},
-                  child: Text('全部 >', style: TextStyle(fontSize: ScreenUtil().setSp(25)),),
+                  child: Text('全部 >', style: TextStyle(fontSize: ScreenUtil().setSp(25), color: Colors.black26),),
                 )
               ],
             ),

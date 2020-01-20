@@ -20,7 +20,7 @@ class MemberPage extends StatelessWidget {
          MyOrder(), // 我的订单
          MyTool() // 我的工具
       ],
-     ) ,
+     ),
    );
   }
 }

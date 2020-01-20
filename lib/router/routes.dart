@@ -8,6 +8,7 @@ class Routes {
   static String detailsPage = '/details';
   static String detailsPageAnther = '/details-anther';
   static String goodsList = '/goods-list';
+  static String search = '/search';
     static void configureRoutes(Router router){
       router.notFoundHandler = new Handler(
         handlerFunc: (BuildContext context,Map<String,List<String>> params){
@@ -17,5 +18,6 @@ class Routes {
       router.define(detailsPage, handler: detailsHandler);  // detailsHandler来着import './router_handler.dart';
       router.define(detailsPageAnther, handler: detailsAntherHandler);
       router.define(goodsList, handler: goodsListHandler);
+      router.define(search, handler: searchHandler);
     }
 }
